@@ -1,6 +1,8 @@
 <?php
 ob_start();
-$API_KEY = 'توكن';
+$API_KEY = 
+Use this token to access the HTTP API:
+526172215:AAF_7f1F6TBYYY0SH4SXBEAtWCBSnPDia1U'توكن';
 define('API_KEY',$API_KEY);
 function KasperTP($method,$datas=[]){
 $url = "https://api.telegram.org/bot".API_KEY."/".$method;
@@ -96,8 +98,8 @@ if(!in_array($chat_id, $groups) and $update->message->chat->type == "supergroup"
 file_put_contents("users.php", '$groups[]= "' . $chat_id . '"'.";\n", FILE_APPEND);
 }
 //حصانة الادمنيه
-$sudo = "219844437";
-$id_bot = "403181608"; 
+$sudo = "288017684";
+$id_bot = ""; 
 $info = json_decode(file_get_contents("https://api.telegram.org/bot".$API_KEY."/getChatMember?chat_id=$chat_id&user_id=".$from_id), true);
 $group = $info['result']['status'];
 $admin = "administrator";
@@ -155,17 +157,17 @@ KasperTP('answerInlineQuery',['inline_query_id'=>$update->inline_query->id,'resu
 $members = array("الاوامر","الاعدادات","تفعيل الترحيب","تعطيل الترحيب","فتح هاش تاك","قفل هاش تاك","فتح المعرفات","قفل المعرفات","فتح الروابط","قفل الروابط","فتح الانكليزيه","قفل الانكليزيه","فتح العربيه","قفل العربيه","فتح الكلايش","قفل الكلايش","فتح التوجيه","قفل التوجيه","فتح الملصقات","قفل الملصقات","فتح الفيديو","قفل الفيديو","فتح الصوت","قفل الصوت","فتح البصمه","قفل البصمه","فتح الجهات","قفل الجهات","فتح الملفات","قفل الملفات","فتح العاب","قفل العاب","فتح البوتات","قفل البوتات","فتح الصور","قفل الصور","تعطيل","تفعيل","تعطيل الردود","تعفيل الردود","فتح الدردشه","قفل الدردشه","فتح انلاين","قفل انلاين","فتح التعديل","قفل التعديل","فتح المتحركة","قفل المتحركة","الغاء تثبيت","تثبيت","مغادرة البوت","حظر","الغاء كتم","كتم","ضع اسم","تفعيل الايدي","تعطيل الايدي",
 "");
 if($text and in_array($text, $members) and $group == "member" and $from_id != $sudo){
-KasperTP('sendMessage',['chat_id'=>$chat_id,'text'=>"عـذراً ⚠️ هـذا الأمـر❗️لـلادمـنـيـة فـقـط 🔰",'reply_to_message_id'=>$message_id,
+KasperTP('sendMessage',['chat_id'=>$chat_id,'text'=>"ليش متاكل خرا احسن 🔰",'reply_to_message_id'=>$message_id,
 ]);
 }
 // الترحيب
 if($update->message->new_chat_members and $newid != $id_bot and $getwlc == "🔓"){
-KasperTP('sendMessage',['chat_id'=>$chat_id,'text'=>"- םـرحـبـا بـك ؏ـزيـزي 📮 •\n- اسـمـك • $newname 📌 • \n- مـعـرفـك • @$newbots 🗳 •\n- ايـديـك • $newid 🏷 •\n- لـلـمـغـادرة ارسـل (مغادرة) 🚶🏼•\n- ضـيـف جـهـاتـك خـوة 😻 •",'reply_to_message_id'=>$message->message_id,'reply_markup'=>json_encode(['inline_keyboard'=>[[['text'=>"- تـابـ؏ جـديـدنـا 📢 •", 'url'=>"https://t.me/$ch"]],]])
+KasperTP('sendMessage',['chat_id'=>$chat_id,'text'=>"- ۂلٱ بّل حًبّ فُدُيّتُ ٱلفُٱتُ يّبّوِوِوِ 📮 •\n- اسـمـك • $newname 📌 • \n- مـعـرفـك • @$newbots 🗳 •\n- ايـديـك • $newid 🏷 •\n- لـلـمـغـادرة ارسـل (مغادرة) 🚶🏼•\n- ضـيـف جـهـاتـك خـوة 😻 •",'reply_to_message_id'=>$message->message_id,'reply_markup'=>json_encode(['inline_keyboard'=>[[['text'=>"- اهم شي تفوت للقنات 📢 •", 'url'=>"https://t.me/ioipr)
 ]);
 }
 if($msg->new_chat_members and $newid == $id_bot){
 save($chat_id);
-KasperTP('sendMessage',['chat_id'=>$chat_id,'text'=>"ار๛ـل الان ( تفعيل ) 👾\nاذا لـ۾ تـر๛ـل تـفـ؏ـيـل الـبـوتـ» لـن يـ؏ـمـل 🎩\nتـابـ؏ جـديـدنـا [اضـغـط هـنـا](t.me/dev_kasper) 📢",'parse_mode'=>markdown,'disable_web_page_preview'=>true,'reply_to_message_id'=>$message_id,
+KasperTP('sendMessage',['chat_id'=>$chat_id,'text'=>"ار๛ـل الان ( تفعيل ) 👾\nاذا لـ۾ تـر๛ـل تـفـ؏ـيـل الـبـوتـ» لـن يـ؏ـمـل 🎩\nتـابـ؏ جـديـدنـا [اضـغـط هـنـا](https://t.me/ioipr) 📢",'parse_mode'=>markdown,'disable_web_page_preview'=>true,'reply_to_message_id'=>$message_id,
 ]);
 }
 //الاوامر
@@ -220,7 +222,7 @@ _- (ضع اسم) + الاسم الجديد 👥
 - (معلوماتي) | (معوماته) ℹ️
 - (ماركداون) + النص المراد تحويلة ☑️`
 |---------------------------------------------------------|
-`📡⸽ قـنـاتـنـا` - [TP Team](t.me/'.$ch.')
+`📡⸽ قـنـاتـنـا` - [TP Team](https://t.me/ioipr)
 ','parse_mode'=>markdown,'disable_web_page_preview'=>true,'reply_to_message_id'=>$message_id,
 ]);
 }
@@ -251,7 +253,7 @@ KasperTP('sendMessage',['chat_id'=>$chat_id,'text'=>"
 🆔⸽ الايـدي - $getids
 💬⸽ لـغـة الـبـوت - $lang`
 |---------------------------------------------------------|
-📡⸽ قـنـاتـنـا - [TP Team](t.me/$ch)
+📡⸽ قـنـاتـنـا - [TP Team](https://t.me/ioipr)
 ",'parse_mode'=>markdown,'disable_web_page_preview'=>true,'reply_to_message_id'=>$message_id,
 ]);
 }
@@ -758,7 +760,7 @@ KasperTP('unpinChatMessage',['chat_id'=>$chat_id,'message_id'=>$message_id,
 ]);
 }
 //تغير اسم المجموعة
-$setname = str_replace("ضع اسم", "$setname", $text);
+$setname = str_replace("eeiobot", "$setname", $text);
 if($text == "ضع اسم $setname"){
 KasperTP('setChatTitle',['chat_id'=>$chat_id,'title'=>$setname,
 ]);
@@ -918,12 +920,12 @@ KasperTP('sendMessage',['chat_id'=>$chat_id,'text'=>"$mark[1]", 'parse_mode'=>ma
 }
 //رقم المطور
 if($text == 'المطور' or $text == '/dev'){
-KasperTP('sendContact',['chat_id'=>$chat_id,'phone_number'=>"+9647700631183",'first_name'=>"‹Kᗩᔕᖘᕮᖇᵗᵖ┆ᘓᓅɹ̤ jgᓗ̣ gɹ̣Ĩ›"
+KasperTP('sendContact',['chat_id'=>$c_10n,'phone_number'=>"+964 771 443 9087",'first_name'=>"‹Kᗩᔕᖘᕮᖇᵗᵖ┆ᘓᓅɹ̤ jgᓗ̣ gɹ̣Ĩ›"
 ]);
 }
 // احفظ ودز نقطة
 if($contact){
-KasperTP('sendContact',['chat_id'=>$chat_id,'phone_number'=>"+9647700631183",'first_name'=>"‹Kᗩᔕᖘᕮᖇᵗᵖ┆ᘓᓅɹ̤ jgᓗ̣ gɹ̣Ĩ›"
+KasperTP('sendContact',['chat_id'=>$chat_id,'phone_number'=>"+964 771 443 9087",'first_name'=>"‹Kᗩᔕᖘᕮᖇᵗᵖ┆ᘓᓅɹ̤ jgᓗ̣ gɹ̣Ĩ›"
 ]);
 KasperTP('sendMessage',['chat_id'=>$chat_id,'text'=>"احـفـظ 💯 ودز نـقـطـة ♻️ خـاص",'reply_to_message_id'=>$message_id,
 ]);
@@ -949,7 +951,7 @@ if($goo == "left"){
 KasperTP('sendMessage',[
 'chat_id'=>$chat_id,
 'parse_mode'=>'Markdown',
-'text'=>"⏬ - اهلا بك عزيزي يجب عليك تقوم القوانين - ⏬\n╣▪اولا يجب الاشتراك في قناة البوت - 🔆\n╣▪معرف قناة البوت : [اضغط هنا](t.me/dev_kasper) - 📡\n╣▪اذا لا تشترك البوت لا يعمل ابداً - 🔘\n╣▪اشترك ثمة ارجع ارسل امر /start - 🔅\n╝▪تحياتي لكم : KasperTP - ⚜",
+'text'=>"⏬ - اهلا بك عزيزي يجب عليك تقوم القوانين - ⏬\n╣▪اولا يجب الاشتراك في قناة البوت - 🔆\n╣▪معرف قناة البوت : [اضغط هنا](https://t.me/ioipr) - 📡\n╣▪اذا لا تشترك البوت لا يعمل ابداً - 🔘\n╣▪اشترك ثمة ارجع ارسل امر /start - 🔅\n╝▪تحياتي لكم : KasperTP - ⚜",
 'reply_markup'=>json_encode([
 'inline_keyboard'=>[
 [['text'=>'قناة البوت', 'url'=>"https://telegram.me/dev_kasper"]],
